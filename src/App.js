@@ -7,9 +7,9 @@ function App() {
       {/* Header */}
       <div className="app--header">
         <div className="buttons">
-          <button>Generate</button>
+          <button id="generate">Generate</button>
           <div className="divider"></div>
-          <button>Start</button>
+          <button id="start">Start</button>
         </div>
 
         <div className="title">

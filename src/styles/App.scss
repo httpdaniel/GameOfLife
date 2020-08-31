@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a {
+  outline: 0;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -20,10 +24,31 @@
     display: flex;
     margin-left: 30px;
     .divider {
-      width: 40px;
+      width: 30px;
     }
     button {
       cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background-color: rgb(94, 94, 94);
+      border-radius: 7px;
+      font-size: 16px;
+      padding: 8px;
+    }
+    #generate {
+      background-color: rgb(94, 94, 94);
+      border: 2px solid grey;
+      &:hover {
+        background-color: rgb(56, 56, 56);
+      }
+    }
+    #start {
+      background-color: rgb(13, 199, 97);
+      border: 2px solid rgb(98, 233, 159);
+      &:hover {
+        background-color: rgb(14, 158, 79);
+      }
     }
   }
   .title {
