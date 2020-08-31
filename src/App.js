@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Board from "./Board";
 import "./styles/App.scss";
 
 function App() {
+  const [height, setHeight] = useState();
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    const navHeight = 70;
+    const footer = 10;
+    const height = Math.floor(
+      (document.documentElement.clientHeight - navHeight - footer) / 28
+    );
+    const width = Math.floor(document.documentElement.clientWidth / 25);
+    setHeight(height);
+    setWidth(width);
+  }, []);
+
   return (
     <div className="app">
       {/* Header */}
@@ -39,7 +54,9 @@ function App() {
       </div>
 
       {/* Body */}
-      <div className="app__body"></div>
+      <div className="app__body">
+        <Board height={height} width={width} />
+      </div>
 
       {/* Footer */}
       <div className="app__footer"></div>
