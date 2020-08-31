@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="app">
       {/* Header */}
-      <div className="app--header">
+      <div className="app__header">
         <div className="buttons">
           <button id="generate">Generate</button>
           <div className="divider"></div>
@@ -39,9 +39,12 @@ function App() {
       </div>
 
       {/* Body */}
-      <div className="app--body">
+      <div className="app__body">
         <h1>This is the main page</h1>
       </div>
+
+      {/* Footer */}
+      <div className="app__footer"></div>
     </div>
   );
 }
