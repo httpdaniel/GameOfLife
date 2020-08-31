@@ -39,9 +39,7 @@ function App() {
       </div>
 
       {/* Body */}
-      <div className="app__body">
-        <h1>This is the main page</h1>
-      </div>
+      <div className="app__body"></div>
 
       {/* Footer */}
       <div className="app__footer"></div>
