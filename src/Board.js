@@ -10,10 +10,10 @@ function Board({ height, width }) {
       let children = [];
       // Inner loop to create children
       for (let j = 0; j < width; j++) {
-        children.push(<td></td>);
+        children.push(<td id={["cell ", i, " ", j].join("")}></td>);
       }
       //Create the parent and add the children
-      table.push(<tr>{children}</tr>);
+      table.push(<tr id={["row ", i].join("")}>{children}</tr>);
     }
     return table;
   };
