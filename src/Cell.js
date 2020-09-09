@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import "./styles/Board.scss";
 
-function Cell({ alive, handleClick }) {
-  const [isActive, setActive] = useState(false);
+function Cell({ id }) {
+  // Store state of cell i.e. dead or alive
+  const [isAlive, setAlive] = useState(false);
 
   const toggleClass = () => {
-    setActive(!isActive);
+    setAlive(!isAlive);
   };
 
-  return <td className={isActive ? "alive" : null} onClick={toggleClass}></td>;
+  return (
+    <td id={id} className={isAlive ? "alive" : null} onClick={toggleClass}></td>
+  );
 }
 
 export default Cell;
