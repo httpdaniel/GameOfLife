@@ -1,23 +1,24 @@
 import React from "react";
+import "./styles/Board.scss";
 
 function Board({ height, width }) {
-  let tableHTML = "";
+  const createTable = () => {
+    let table = [];
 
-  for (let i = 0; i < height; i++) {
-    let currentArrayRow = [];
-    let currentHTMLRow = `<tr id="row ${i}">`;
-    for (let x = 0; x < width; x++) {}
-  }
+    // Outer loop to create parent
+    for (let i = 0; i < height; i++) {
+      let children = [];
+      // Inner loop to create children
+      for (let j = 0; j < width; j++) {
+        children.push(<td></td>);
+      }
+      //Create the parent and add the children
+      table.push(<tr>{children}</tr>);
+    }
+    return table;
+  };
 
-  return (
-    <div>
-      <h1>I'm a board</h1>
-      <p>this is where all the cells will go</p>
-      <h1>{height}</h1>
-      <h1>{width}</h1>
-      <table></table>
-    </div>
-  );
+  return <table>{createTable()}</table>;
 }
 
 export default Board;

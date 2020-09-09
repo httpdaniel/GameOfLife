@@ -10,7 +10,7 @@ function App() {
     const navHeight = 70;
     const footer = 10;
     const height = Math.floor(
-      (document.documentElement.clientHeight - navHeight - footer) / 28
+      (document.documentElement.clientHeight - navHeight - footer) / 25
     );
     const width = Math.floor(document.documentElement.clientWidth / 25);
     setHeight(height);
