@@ -1,4 +1,5 @@
 import React from "react";
+import Cell from "./Cell";
 import "./styles/Board.scss";
 
 function Board({ height, width }) {
@@ -10,15 +11,23 @@ function Board({ height, width }) {
       let children = [];
       // Inner loop to create children
       for (let j = 0; j < width; j++) {
-        children.push(<td id={["cell ", i, " ", j].join("")}></td>);
+        children.push(<Cell key={[i, j]} id={["cell ", i, " ", j].join("")} />);
       }
-      //Create the parent and add the children
-      table.push(<tr id={["row ", i].join("")}>{children}</tr>);
+      // Create the parent and add the children
+      table.push(
+        <tr key={i} id={["row ", i].join("")}>
+          {children}
+        </tr>
+      );
     }
     return table;
   };
 
-  return <table>{createTable()}</table>;
+  return (
+    <table>
+      <tbody>{createTable()}</tbody>
+    </table>
+  );
 }
 
 export default Board;
