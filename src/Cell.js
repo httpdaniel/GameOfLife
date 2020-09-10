@@ -5,12 +5,27 @@ function Cell({ id }) {
   // Store state of cell i.e. dead or alive
   const [isAlive, setAlive] = useState(false);
 
-  const toggleClass = () => {
+  const onMouseEvent = () => (e) => {
+    e.stopPropagation();
+    if (e.nativeEvent.which !== 1) {
+      return;
+    }
+    setAlive(!isAlive);
+  };
+
+  const toggleClass = () => (e) => {
+    e.stopPropagation();
     setAlive(!isAlive);
   };
 
   return (
-    <td id={id} className={isAlive ? "alive" : null} onClick={toggleClass}></td>
+    <td
+      id={id}
+      className={isAlive ? "alive" : null}
+      onClick={toggleClass}
+      onMouseOver={onMouseEvent()}
+      onMouseDown={onMouseEvent()}
+    ></td>
   );
 }
 
